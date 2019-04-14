@@ -8,13 +8,6 @@ const avocadoDiv = document.getElementById('avocado');
 const beerDiv = document.getElementById('beer');
 const latteDiv = document.getElementById('latte');
 
-const win = new Audio();
-win.src = "../sounds/alert1.wav";
-const draw = new Audio();
-draw.src = "../sounds/alert2.wav";
-const lose = new Audio();
-lose.src = "../sounds/failure1.wav";
-
 function getComputerChoice() {
   const choices = ["avocado", "beer", "latte"];
   const randomNumber = (Math.floor(Math.random() * 3));
@@ -37,6 +30,8 @@ function userWins(user, computer) {
   userScoreSpan.innerHTML = userScore;
   computerScoreSpan.innerHTML = computerScore;
   resultDiv.innerHTML = `${formatResult(user)} defeats ${formatSecondResult(computer)}. You win!`;
+  let win = new Audio();
+  win.src = "../sounds/alert1.wav";
   win.play()
   document.getElementById(user).classList.add('greenGlow');
   setTimeout(function() {document.getElementById(user).classList.remove('greenGlow')}, 800);
@@ -47,6 +42,8 @@ function userLoses(user, computer) {
   computerScoreSpan.innerHTML = computerScore;
   userScoreSpan.innerHTML = userScore;
   resultDiv.innerHTML = `${formatResult(computer)} defeats ${formatSecondResult(user)}. You lose!`;
+  let lose = new Audio();
+  lose.src = "../sounds/failure1.wav";
   lose.play();
   document.getElementById(user).classList.add('redGlow');
   setTimeout(function() {document.getElementById(user).classList.remove('redGlow')}, 800);
@@ -58,6 +55,8 @@ function itsADraw(user, computer) {
   computerScoreSpan.innerHTML = computerScore;
   userScoreSpan.innerHTML = userScore;
   resultDiv.innerHTML = `The virtual hipster also chose ${formatSecondResult(computer)}. It's a draw. Play again!`;
+  let draw = new Audio();
+  draw.src = "../sounds/alert2.wav";
   draw.play();
   document.getElementById(user).classList.add('yellowGlow');
   setTimeout(function() {document.getElementById(user).classList.remove('yellowGlow')}, 800);
