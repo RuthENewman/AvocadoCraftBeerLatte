@@ -38,7 +38,8 @@ function userWins(user, computer) {
   computerScoreSpan.innerHTML = computerScore;
   resultDiv.innerHTML = `${formatResult(user)} defeats ${formatSecondResult(computer)}. You win!`;
   win.play()
-  document.getElementById(user).classList = 'choice greenGlow';
+  document.getElementById(user).classList.add('greenGlow');
+  setTimeout(function() {document.getElementById(user).classList.remove('greenGlow')}, 800);
 }
 
 function userLoses(user, computer) {
@@ -47,7 +48,8 @@ function userLoses(user, computer) {
   userScoreSpan.innerHTML = userScore;
   resultDiv.innerHTML = `${formatResult(computer)} defeats ${formatSecondResult(user)}. You lose!`;
   lose.play();
-  document.getElementById(user).classList = 'choice redGlow';
+  document.getElementById(user).classList.add('redGlow');
+  setTimeout(function() {document.getElementById(user).classList.remove('redGlow')}, 800);
 }
 
 function itsADraw(user, computer) {
@@ -57,7 +59,8 @@ function itsADraw(user, computer) {
   userScoreSpan.innerHTML = userScore;
   resultDiv.innerHTML = `The virtual hipster also chose ${formatSecondResult(computer)}. It's a draw. Play again!`;
   draw.play();
-  document.getElementById(user).classList = 'choice yellowGlow';
+  document.getElementById(user).classList.add('yellowGlow');
+  setTimeout(function() {document.getElementById(user).classList.remove('yellowGlow')}, 800);
 }
 
 function game(userChoice) {
