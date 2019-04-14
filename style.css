@@ -99,3 +99,18 @@ header > p {
   font-size: 24px;
   margin: 25px 0;
 }
+
+.greenGlow {
+  border: 4px solid #4dcc7d;
+  box-shadow: 0 0 10px #31b43d;
+}
+
+.redGlow {
+  border: 4px solid #fc121b;
+  box-shadow: 0 0 10px #d01115;
+}
+
+.yellowGlow {
+  border: 4px solid yellow;
+  box-shadow: 0 0 10 orange;
+}
